@@ -3,209 +3,356 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tienda Black dragon</title>
-
+    <title>BLACK DRAGON - Tienda</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <style>
-        /* --- ESTILOS GENERALES --- */
-        body { 
-            font-family: Arial, sans-serif; 
-            margin: 0; 
-            padding: 0; 
-            background-color: #f4f4f4; 
-            color: #333; 
-        }
-
-        .header { 
-            background-color: #007bff; 
-            color: white; 
-            padding: 1rem; 
-            text-align: center; 
-        }
-
-        .nav a { 
-            color: white; 
-            margin: 0 1rem; 
-            text-decoration: none; 
-        }
-
-        /* --- HERO LOGIN --- */
-        .hero { 
-            padding: 2rem; 
-            text-align: center; 
-        }
-
-        .card { 
-            background-color: white; 
-            padding: 2rem; 
-            border-radius: 8px; 
-            box-shadow: 0 0 10px rgba(0,0,0,0.1); 
-            max-width: 400px; 
-            margin: 0 auto; 
-        }
-
-        .form label { display: block; margin-top: 1rem; }
-        .form input { width: 100%; padding: 0.5rem; margin-top: 0.5rem; }
-        .form button { 
-            margin-top: 1rem; 
-            padding: 0.5rem 1rem; 
-            background-color: #007bff; 
-            color: white; 
-            border: none; 
-            cursor: pointer; 
-        }
-
-        /* --- SECCIÓN DE PRODUCTOS --- */
-        .productos {
-            padding: 2rem;
-            text-align: center;
-        }
-
-        .producto-lista {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-        }
-
-        /* --- TARJETAS DE PRODUCTOS MEJORADAS --- */
-        .producto {
-            background-color: white;
-            padding: 1rem;
-            margin: 1rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
-            width: 260px;
-            transition: transform 0.2s ease, box-shadow 0.3s ease;
-            text-align: center;
-        }
-
-        .producto:hover {
-            transform: scale(1.05);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.25);
-        }
-
-        .producto img {
-            width: 100%;
-            height: 180px;
-            object-fit: cover;
-            border-radius: 10px;
-            margin-bottom: 1rem;
-        }
-
-        .producto button {
-            background-color: #28a745;
-            color: white;
-            border: none;
-            padding: 0.7rem 1rem;
-            cursor: pointer;
-            border-radius: 6px;
-            width: 100%;
-            font-size: 1rem;
-            transition: background-color 0.2s ease;
-            margin-top: 0.5rem;
-        }
-
-        .producto button:hover {
-            background-color: #218838;
-        }
-
-        .producto a {
-            display: block;
-            margin-top: 0.5rem;
-            text-decoration: none;
-            color: #007bff;
-            font-weight: bold;
-        }
-
-        .producto a:hover {
-            color: #0056b3;
-        }
-
-        /* --- FOOTER --- */
-        .footer { 
-            background-color: #333; 
-            color: white; 
-            text-align: center; 
-            padding: 1rem; 
-        }
-
-        .footer nav a { 
-            color: white; 
-            margin: 0 1rem; 
-        }
+        body { background-color: #f2f2f2; }
+        .logo { font-size: 28px; font-weight: bold; letter-spacing: 2px; }
+        .producto img { height: 180px; object-fit: cover; }
+        .oculto { display: none; }
+        .categoria-btn { margin-right: 5px; }
+        .card-product:hover { transform: scale(1.02); transition: 0.25s; }
     </style>
 </head>
 <body>
 
-    <header class="header">
-        <h1 class="logo"> BLACK DRAGON <span>2024</span></h1>
-        <nav class="nav">
-            <a href="#">Inicio</a>
-            <a href="#">Productos</a>
-            <a href="#">Cuenta</a>
-            <a href="#">Contacto</a>
-        </nav>
-    </header>
-
-    <!-- PRODUCTOS CON IMÁGENES GRANDES -->
-    <section class="productos">
-        <h2>Productos Destacados</h2>
-        <div class="producto-lista">
-
-            <div class="producto">
-                <img src="https://via.placeholder.com/300x200" alt="Producto 1">
-                <h3>Producto 1</h3>
-                <p>Descripción breve del producto.</p>
-                <p>Precio: $10.00</p>
-                <button>Agregar al Carrito</button>
-                <a href="#">Ver más</a>
-            </div>
-
-            <div class="producto">
-                <img src="https://via.placeholder.com/300x200" alt="Producto 2">
-                <h3>Producto 2</h3>
-                <p>Descripción breve del producto.</p>
-                <p>Precio: $20.00</p>
-                <button>Agregar al Carrito</button>
-                <a href="#">Ver más</a>
-            </div>
-
-            <div class="producto">
-                <img src="https://via.placeholder.com/300x200" alt="Producto 3">
-                <h3>Producto 3</h3>
-                <p>Descripción breve del producto.</p>
-                <p>Precio: $30.00</p>
-                <button>Agregar al Carrito</button>
-                <a href="#">Ver más</a>
-            </div>
-
+<header class="text-white text-center p-3" style="background:#0d6efd">
+    <div class="container d-flex align-items-center justify-content-between">
+        <div class="d-flex align-items-center gap-3">
+            <h1 class="logo m-0">BLACK DRAGON</h1>
         </div>
-    </section>
-
-    <!-- LOGIN -->
-    <section class="hero">
-        <div class="card">
-            <h2>Bienvenido</h2>
-            <p class="subtitle">Inicia sesión para continuar</p>
-            <form class="form">
-                <label for="email">Correo electrónico</label>
-                <input type="email" id="email" placeholder="tuemail@ejemplo.com" required>
-
-                <label for="password">Contraseña</label>
-                <input type="password" id="password" placeholder="•••••••••" required>
-
-                <button type="submit">Ingresar</button>
-            </form>
-        </div>
-    </section>
-
-    <footer class="footer">
-        <p>&copy; 2024 Tienda Digital. Todos los derechos reservados.</p>
         <nav>
-            <a href="#">Política de Privacidad</a>
-            <a href="#">Términos de Servicio</a>
-            <a href="#">Contacto</a>
+            <button class="btn btn-light btn-sm me-1" onclick="mostrar('inicio')">Inicio</button>
+            <button class="btn btn-light btn-sm me-1" onclick="mostrar('productos')">Productos</button>
+            <button class="btn btn-light btn-sm me-1" onclick="mostrar('compras')">Carrito (<span id="contadorCarrito">0</span>)</button>
+            <button class="btn btn-warning btn-sm me-1" onclick="mostrar('auth')">Login / Registro</button>
+            <button class="btn btn-light btn-sm" onclick="mostrar('contacto')">Contacto</button>
         </nav>
-    </footer>
+    </div>
+</header>
 
+<main class="container my-4">
+    <!-- INICIO -->
+    <section id="inicio">
+        <div class="row align-items-center">
+            <div class="col-md-7">
+                <h2 class="mb-3">Black Dragon — Todo para gamers</h2>
+                <p class="lead">Encuentra periféricos, sillas gamer, ropa, accesorios y más con la mejor calidad para tu setup.</p>
+                <ul>
+                    <li>Teclados mecánicos RGB</li>
+                    <li>Mouse gamer de alta precisión</li>
+                    <li>Audífonos con cancelación de ruido</li>
+                    <li>Sillas ergonómicas</li>
+                </ul>
+                <div class="mt-3">
+                    <button class="btn btn-success me-2" onclick="mostrar('productos')">Ver catálogo</button>
+                    <button class="btn btn-outline-primary" onclick="mostrar('auth')">Iniciar sesión / Registro</button>
+                </div>
+            </div>
+            <div class="col-md-5 text-center">
+                <img src="https://via.placeholder.com/420x260" class="img-fluid rounded shadow" alt="Hero">
+            </div>
+        </div>
+
+        <hr class="my-4">
+        <h3 class="mb-3">Productos Destacados</h3>
+        <div class="row g-3">
+            <div class="col-md-4">
+                <div class="card card-product shadow">
+                    <img src="https://via.placeholder.com/300x180" class="card-img-top" alt="Camiseta Gamer">
+                    <div class="card-body text-center">
+                        <h5>Camiseta Gamer</h5>
+                        <p>$39.900</p>
+                        <button class="btn btn-success" onclick="agregarCarrito(5)">Agregar</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card card-product shadow">
+                    <img src="https://via.placeholder.com/300x180" class="card-img-top" alt="Mouse RGB">
+                    <div class="card-body text-center">
+                        <h5>Mouse RGB</h5>
+                        <p>$59.900</p>
+                        <button class="btn btn-success" onclick="agregarCarrito(2)">Agregar</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card card-product shadow">
+                    <img src="https://via.placeholder.com/300x180" class="card-img-top" alt="Teclado">
+                    <div class="card-body text-center">
+                        <h5>Teclado Mecánico RGB</h5>
+                        <p>$129.900</p>
+                        <button class="btn btn-success" onclick="agregarCarrito(1)">Agregar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRODUCTOS -->
+    <section id="productos" class="oculto my-4">
+        <h2 class="text-center mb-4">Catálogo de Productos</h2>
+        <div class="row" id="listaProductos"></div>
+    </section>
+
+    <!-- COMPRAS -->
+    <section id="compras" class="oculto my-4">
+        <h2 class="text-center mb-4">Carrito de Compras</h2>
+        <div id="carrito"></div>
+        <div class="d-flex justify-content-end mt-3">
+            <button class="btn btn-success" onclick="simularCompra()">Finalizar Compra</button>
+        </div>
+    </section>
+
+    <!-- AUTH -->
+    <section id="auth" class="oculto my-4" style="max-width:540px;">
+        <div class="card p-4 shadow mx-auto">
+            <h3 class="text-center">Iniciar Sesión</h3>
+            <form id="loginForm">
+                <label>Email</label>
+                <input type="email" id="loginEmail" class="form-control mb-2" required>
+                <label>Contraseña</label>
+                <input type="password" id="loginPass" class="form-control mb-2" required>
+                <button class="btn btn-primary w-100">Entrar</button>
+            </form>
+            <p class="text-center mt-3">¿No tienes cuenta? <a href="#" onclick="toggleRegistro()">Regístrate aquí</a></p>
+            <div id="registroPanel" class="oculto mt-3">
+                <h4 class="text-center">Registro</h4>
+                <form id="registerForm">
+                    <label>Email</label>
+                    <input type="email" id="regEmail" class="form-control mb-2" required>
+                    <label>Contraseña</label>
+                    <input type="password" id="regPass" class="form-control mb-2" required>
+                    <button class="btn btn-success w-100">Registrar</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section id="contacto" class="oculto my-4">
+        <h2 class="text-center mb-4">Contáctanos</h2>
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card p-4 shadow">
+                    <h4 class="text-center mb-3">Información de Contacto</h4>
+                    <p><i class="bi bi-envelope"></i> Correo: <strong>soporte.blackdragonstore@gmail.com</strong></p>
+                    <p><i class="bi bi-telephone"></i> Teléfono / WhatsApp: <strong>+57 320 987 4563</strong></p>
+                    <p><i class="bi bi-instagram"></i> Instagram: <strong>@blackdragon.store</strong></p>
+                    <p><i class="bi bi-facebook"></i> Facebook: <strong>Black Dragon Store Oficial</strong></p>
+                    <hr>
+                    <h5 class="text-center mb-3">Enviar un mensaje</h5>
+                    <form id="formContacto">
+                        <label>Nombre</label>
+                        <input type="text" id="contNombre" class="form-control mb-3" required>
+                        <label>Correo</label>
+                        <input type="email" id="contCorreo" class="form-control mb-3" required>
+                        <label>Mensaje</label>
+                        <textarea id="contMsg" class="form-control mb-3" rows="3" required></textarea>
+                        <label>Contraseña (opcional)</label>
+                        <input type="password" id="contPass" class="form-control mb-3">
+                        <button class="btn btn-primary w-100">Enviar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="text-center p-3 bg-dark text-white mt-5">
+    © 2025 BLACK DRAGON - Todos los derechos reservados
+</footer>
+
+<!-- SCRIPTS -->
+<script>
+// Encapsulamos inicialización en DOMContentLoaded y exponemos funciones necesarias en window
+window.addEventListener('DOMContentLoaded', function() {
+    // Datos
+    const productos = [
+        {id:1, nombre:'Teclado Mecánico RGB', precio:129900, img:'https://via.placeholder.com/300x180'},
+        {id:2, nombre:'Mouse Gamer 7200 DPI', precio:69900, img:'https://via.placeholder.com/300x180'},
+        {id:3, nombre:'Audífonos RGB', precio:99900, img:'https://via.placeholder.com/300x180'},
+        {id:4, nombre:'Silla Gamer Pro', precio:499900, img:'https://via.placeholder.com/300x180'},
+        {id:5, nombre:'Camiseta Gamer', precio:39900, img:'https://via.placeholder.com/300x180'},
+        {id:6, nombre:'Pad Mouse XL', precio:29900, img:'https://via.placeholder.com/300x180'},
+    ];
+
+    // Estado
+    let carrito = [];
+
+    // Exponer contador para header
+    function actualizarContador() {
+        const el = document.getElementById('contadorCarrito');
+        if (!el) return;
+        const totalItems = carrito.reduce((s, i) => s + i.cantidad, 0);
+        el.innerText = totalItems;
+    }
+
+    // Render productos en sección catálogo
+    function cargarProductos() {
+        const cont = document.getElementById('listaProductos');
+        if (!cont) return;
+        cont.innerHTML = '';
+        productos.forEach(p => {
+            cont.innerHTML += `
+            <div class="col-md-4 mb-3">
+                <div class="card producto shadow card-product">
+                    <img src="${p.img}" class="card-img-top" alt="${p.nombre}">
+                    <div class="card-body text-center">
+                        <h5>${p.nombre}</h5>
+                        <p>$${p.precio.toLocaleString()}</p>
+                        <button class="btn btn-success" onclick="agregarCarrito(${p.id})">Agregar</button>
+                    </div>
+                </div>
+            </div>`;
+        });
+    }
+
+    // Exponer agregarCarrito al scope window (para onclick HTML)
+    window.agregarCarrito = function(id) {
+        const prod = productos.find(x => x.id === id);
+        if (!prod) return alert('Producto no encontrado');
+
+        const existente = carrito.find(i => i.id === id);
+        if (existente) {
+            existente.cantidad++;
+        } else {
+            carrito.push({ id: prod.id, nombre: prod.nombre, precio: prod.precio, cantidad: 1 });
+        }
+        actualizarCarrito();
+        actualizarContador();
+    };
+
+    // Actualizar vista del carrito
+    function actualizarCarrito() {
+        const div = document.getElementById('carrito');
+        if (!div) return;
+        div.innerHTML = '';
+        if (carrito.length === 0) {
+            div.innerHTML = '<p>No hay productos en el carrito.</p>';
+            return;
+        }
+        carrito.forEach((p, i) => {
+            const row = document.createElement('div');
+            row.className = 'd-flex justify-content-between align-items-center border p-2 mb-2';
+            row.innerHTML = `
+                <div>
+                    <strong>${p.nombre}</strong><br>
+                    <small>Cantidad: <span id="cant-${i}">${p.cantidad}</span></small>
+                </div>
+                <div class="text-end">
+                    <div>$${(p.precio * p.cantidad).toLocaleString()}</div>
+                    <div class="mt-2">
+                        <button class="btn btn-sm btn-secondary me-1" onclick="cambiarCantidad(${i}, 1)">+</button>
+                        <button class="btn btn-sm btn-secondary me-1" onclick="cambiarCantidad(${i}, -1)">-</button>
+                        <button class="btn btn-sm btn-danger" onclick="eliminar(${i})">Eliminar</button>
+                    </div>
+                </div>
+            `;
+            div.appendChild(row);
+        });
+        const total = carrito.reduce((sum, it) => sum + it.precio * it.cantidad, 0);
+        const totalDiv = document.createElement('div');
+        totalDiv.className = 'text-end mt-3';
+        totalDiv.innerHTML = `<h4>Total: $${total.toLocaleString()}</h4>`;
+        div.appendChild(totalDiv);
+    }
+
+    // Exponer actualizarCarrito para uso cuando se muestra sección compras
+    window.actualizarCarrito = function() { actualizarCarrito(); };
+
+    // Cambiar cantidad
+    window.cambiarCantidad = function(i, delta) {
+        if (!carrito[i]) return;
+        carrito[i].cantidad += delta;
+        if (carrito[i].cantidad <= 0) carrito.splice(i, 1);
+        actualizarCarrito();
+        actualizarContador();
+    };
+
+    // Eliminar
+    window.eliminar = function(i) {
+        carrito.splice(i,1);
+        actualizarCarrito();
+        actualizarContador();
+    };
+
+    // Simular compra
+    window.simularCompra = function() {
+        if (carrito.length === 0) return alert('Tu carrito está vacío');
+        const total = carrito.reduce((sum, it) => sum + it.precio * it.cantidad, 0);
+        alert(`Compra exitosa. Total: $${total.toLocaleString()}\n¡Gracias por comprar en Black Dragon!`);
+        carrito = [];
+        actualizarCarrito();
+        actualizarContador();
+        mostrar('inicio');
+    };
+
+    // Form contacto
+    const formContacto = document.getElementById('formContacto');
+    if (formContacto) {
+        formContacto.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const nombre = document.getElementById('contNombre').value;
+            const correo = document.getElementById('contCorreo').value;
+            const mensaje = document.getElementById('contMsg').value;
+            const pass = document.getElementById('contPass').value;
+            alert(`Mensaje enviado\nNombre: ${nombre}\nCorreo: ${correo}\nMensaje: ${mensaje}${pass ? '\nContraseña: ' + pass : ''}`);
+            formContacto.reset();
+        });
+    }
+
+    // Login / register
+    const loginForm = document.getElementById('loginForm');
+    if (loginForm) {
+        loginForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Inicio de sesión exitoso (simulado)');
+            mostrar('usuario');
+        });
+    }
+    const registerForm = document.getElementById('registerForm');
+    if (registerForm) {
+        registerForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Registro exitoso (simulado)');
+            mostrar('usuario');
+        });
+    }
+
+    // Pestaña usuario (mostramos datos simulados)
+    window.mostrarUsuario = function(email) {
+        const el = document.getElementById('userEmail');
+        if (el) el.innerText = email || 'demo@demo.com';
+        mostrar('usuario');
+    };
+
+    // Inicializar productos en catálogo
+    cargarProductos();
+
+}); // end DOMContentLoaded
+
+// Funciones globales que usan mostrar y toggleRegistro
+function mostrar(id) {
+    document.querySelectorAll('main section').forEach(s => s.classList.add('oculto'));
+    const el = document.getElementById(id);
+    if (el) el.classList.remove('oculto');
+    if (id === 'compras') window.actualizarCarrito && window.actualizarCarrito();
+}
+function toggleRegistro() {
+    const panel = document.getElementById('registroPanel');
+    if (panel) panel.classList.toggle('oculto');
+}
+
+// Mostrar usuario panel simple
+function cerrarSesion() {
+    alert('Sesión cerrada (simulada)');
+    mostrar('inicio');
+}
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
