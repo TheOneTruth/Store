@@ -1,1 +1,7 @@
-@import './tailwind.css';
+/* Dentro de styles/index.css */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ... el resto de tus estilos ... */
