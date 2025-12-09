@@ -5,7 +5,7 @@ const nextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
-  images: {
+ images: {
     remotePatterns: [
       {
         protocol: 'https',
@@ -19,17 +19,15 @@ const nextConfig = {
         protocol: 'https',
         hostname: 'images.pixabay.com',
       },
+      // --- AGREGA ESTO AQUÍ ABAJO ---
+      {
+        protocol: 'https',
+        hostname: 'img.rocket.new',
+      },
+      // -----------------------------
     ],
   },
-  async redirects() {
-    return [
-      {
-        source: '/',
-        destination: '/product-catalog',
-        permanent: false,
-      },
-    ];
-  },
+  
   webpack(config) {
     config.module.rules.push({
       test: /\.(jsx|tsx)$/,
